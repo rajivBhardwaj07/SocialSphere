@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connectly — Profile</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="/feed.html" class="nav-brand">
+        <span class="brand-logo small">C</span>
+        <span>Connectly</span>
+      </a>
+      <div class="nav-search">
+        <input id="search-input" placeholder="Search users..." autocomplete="off" />
+        <div id="search-results" class="search-results"></div>
+      </div>
+      <div class="nav-actions">
+        <a href="/feed.html" class="nav-tab">Feed</a>
+        <a href="#" id="my-profile-link" class="nav-avatar" title="My profile"></a>
+        <button id="logout-btn" class="btn-ghost">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="layout single">
+    <section class="main-col">
+      <div class="profile-header card">
+        <div id="profile-avatar" class="avatar xl"></div>
+        <div class="profile-meta">
+          <div class="profile-top">
+            <h2 id="profile-username">…</h2>
+            <button id="follow-btn" class="btn-primary hidden">Follow</button>
+            <button id="edit-btn" class="btn-ghost hidden">Edit profile</button>
+          </div>
+          <p id="profile-bio" class="muted"></p>
+          <div class="stats">
+            <span><strong id="post-count">0</strong> posts</span>
+            <span><strong id="followers-count">0</strong> followers</span>
+            <span><strong id="following-count">0</strong> following</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="edit-panel" class="card hidden">
+        <h3>Edit profile</h3>
+        <input id="edit-username" placeholder="Username" />
+        <input id="edit-avatar" placeholder="Avatar URL" />
+        <textarea id="edit-bio" placeholder="Bio" maxlength="200"></textarea>
+        <div class="composer-actions">
+          <button id="cancel-edit" class="btn-ghost">Cancel</button>
+          <button id="save-edit" class="btn-primary">Save</button>
+        </div>
+      </div>
+
+      <h3 class="section-title">Posts</h3>
+      <div id="posts" class="posts"></div>
+      <p id="no-posts" class="muted center hidden">No posts yet.</p>
+    </section>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/shared.js"></script>
+  <script src="/js/profile.js"></script>
+</body>
+</html>

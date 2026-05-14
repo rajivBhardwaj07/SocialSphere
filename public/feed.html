@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connectly — Feed</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="/feed.html" class="nav-brand">
+        <span class="brand-logo small">C</span>
+        <span>Connectly</span>
+      </a>
+      <div class="nav-search">
+        <input id="search-input" placeholder="Search users..." autocomplete="off" />
+        <div id="search-results" class="search-results"></div>
+      </div>
+      <div class="nav-actions">
+        <button class="nav-tab active" data-tab="feed">Feed</button>
+        <button class="nav-tab" data-tab="explore">Explore</button>
+        <a href="#" id="my-profile-link" class="nav-avatar" title="My profile"></a>
+        <button id="logout-btn" class="btn-ghost">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="layout">
+    <section class="main-col">
+      <div class="composer card">
+        <div class="composer-head">
+          <div id="composer-avatar" class="avatar md"></div>
+          <textarea id="composer-text" placeholder="What's on your mind?" maxlength="1000"></textarea>
+        </div>
+        <input id="composer-image" placeholder="Image URL (optional)" />
+        <div class="composer-actions">
+          <span id="composer-count" class="muted">0 / 1000</span>
+          <button id="post-btn" class="btn-primary">Post</button>
+        </div>
+      </div>
+
+      <div id="posts" class="posts"></div>
+      <p id="empty-feed" class="muted center hidden">No posts yet. Follow people or create one!</p>
+    </section>
+
+    <aside class="side-col">
+      <div class="card">
+        <h3>Suggested for you</h3>
+        <div id="suggestions"></div>
+      </div>
+      <div class="card muted-card">
+        <p class="muted small">Connectly &middot; Built with Express & MongoDB</p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/shared.js"></script>
+  <script src="/js/feed.js"></script>
+</body>
+</html>
